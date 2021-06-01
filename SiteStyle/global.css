@@ -25,11 +25,37 @@ main {
     width: 90%;
 /*    height: 100px;*/
 
+    padding: 20px;
     background-color: white;
     color: black;
-    text-align: center;
+/*    text-align: center;*/
 }
 
+#pageTitle {
+    position: absolute;
+    margin: 3%;
+    top: 35%;
+    
+    font-size: 4vw;
+    color: red;
+}
+
+h3 {
+    font-size:150%;
+    text-decoration: underline;
+}
+
+p {
+    font-size:125%;
+}
+
+ol {
+    margin: 20px;
+}
+
+li {
+    font-size:200%;
+}
 /* Page Header and Navbar*/
 header {
     min-width:648px;
@@ -63,13 +89,13 @@ nav {
     justify-content: center;
     width: 100%;
 }
-a {
+nav a {
     text-decoration: none;
     position: relative;
     margin-left: 2.5%;
     margin-right: 2.5%;
 }
-a:before {
+nav a:before {
   color:white;
   content: "";
   position: absolute;
@@ -82,12 +108,12 @@ a:before {
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
-a:hover:before {
+nav a:hover:before {
   color:white;
   visibility: visible;
   transform: scaleX(1);
 }
-a:visited {
+nav a:visited {
     color:white;
 }
 /* sliedshow */
