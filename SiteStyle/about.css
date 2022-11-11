@@ -1,0 +1,15 @@
+@charset "UTF-8"; 
+/*
+    StopDogeHate.org Images Page Style Settings
+*/
+
+.aboutTextGroup p {
+    display: block;
+}
+
+.aboutTextGroup {
+    display: grid;
+    grid-template-columns: auto auto; 
+    gap: 35px;
+    margin: 35px;
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8"; 
+/*
+    StopDogeHate.org Images Page Style Settings
+*/
+
+.donateAddressBox h2 {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border: 3px solid white;
+    height: min-content;
+}
+
+.donateAddressBox {
+    display: grid;
+    grid-template-columns: auto auto; 
+    gap: 25px;
+    margin: 25px;
+    justify-items: center;
+    align-items: center;
+}
+@media screen and (max-width: 911px) { /*sets the min-width to make sure the wallet address stays on screen */
+    .donateAddressBox {
+        grid-template-columns: auto; 
+    }
+}

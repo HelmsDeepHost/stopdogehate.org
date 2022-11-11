@@ -2,36 +2,91 @@
 /*
     StopDogeHate.org Global Style Settings
 */
+/* Theme */
+@media (prefers-color-scheme: dark) {
+    main {
+        background-color: #2f3032;
+        color: white;
+    }
+    a:link {
+        color:lightblue;
+    }
+    a:hover:before {
+        color:lightblue;
+    }
+    a:visited {
+        color:lightblue;
+    }
+}
 
+@media (prefers-color-scheme: light) {
+    main {
+        background-color: white;
+        color: black;
+    }
+    a:link {
+        color:blue;
+    }
+    a:hover:before {
+        color:blue;
+    }
+    a:visited {
+        color:blue;
+    }
+}
 /* General Content */
-
 body {
-    min-width:683px;
     
-    background-color: white;
+    min-width:683px;
+
+    background: url("../Images/dogebackgroundsection.jpg");
+    background-size: 100%;
     color: white;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     padding: 0;
     margin: 0;
 }
 
-main {
-    
-    position: absolute;
-    top: 100%;
+#floatingContent {
+
+    position: relative;
+    top: 80vh;
     left: 0;
-    right: 0;
+    right: 0; 
     margin: 0 auto;
     width: 90%;
-/*    height: 100px;*/
-
-    background-color: white;
-    color: black;
-    text-align: center;
 }
 
+main {
+    padding: 30px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+}
+
+h3 {
+    font-size:135%;
+    font-style: italic;
+}
+
+p {
+    font-size:125%;
+}
+
+ol {
+    margin: 20px;
+}
+
+li {
+    font-size:125%;
+}
 /* Page Header and Navbar*/
 header {
+    display:flex;
     min-width:648px;
     position: fixed;
     left:0;
@@ -39,58 +94,145 @@ header {
     top: 10px;
     width: 95%;
     margin: 0 auto;
-    background: rgba(0,0,0,0.75);
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
+    height: 8vh;
+    background: rgba(0,0,0,0.75);
+    
+
 }
+.subHeader {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    top: 100%;
+    height: 0; /* ensures subheader cannot be revealed if mouse is positioned where it appears and not the navbutton*/
+    opacity: 0.0;
+    overflow: hidden;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    
+}
+
 #headerTitle {
     font-size: 1.8vw;
 }
-@media screen and (max-width: 683px) { /*sets the min-width for the title because im using vw */
-    #headerTitle {
-        font-size: 12px;
-    }
-}
+
 #headerLogo {
-    width:5%
+    
+    height: 100%;
 }
 nav {
     position:absolute;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 98%;
+    height: 100%;
 }
-a {
-    text-decoration: none;
+.navButton {
     position: relative;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-a:before {
-  color:white;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #FFF;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
+.navButton:hover {
+    cursor: pointer;
 }
-a:hover:before {
-  color:white;
-  visibility: visible;
-  transform: scaleX(1);
+.subHeader .navButton {
+    display: block;
+    width: fit-content;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
-a:visited {
+nav a {
+    text-decoration: none;
+    font-size: calc(5px + 1.2vw);
+    
+}
+nav a:link {
     color:white;
 }
-/* sliedshow */
-#slideShow img {
-    width:100%;
+nav a:before {
+    color:white;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+nav a:hover:before {
+    color:white;
+    visibility: visible;
+    transform: scaleX(1);
+}
+nav a:visited {
+    color:white;
+}
+
+#joinButton {
+    color:gold;
+    text-decoration: none;
+    font-size: calc(5px + 1.2vw);
+    position: fixed;
+    right: 4%;
+    left: auto;
+    text-align:right;
+}
+#joinButton:link {
+    color:gold;
+}
+#joinButton:before {
+    color:gold;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+}
+#joinButton:visited {
+    color:gold;
+}
+#mediaButton:hover #mediaHeader {
+    height: fit-content;
+    opacity: 1.0;
+}
+#socialButton:hover #socialHeader {
+    height: fit-content;
+    opacity: 1.0;
+}
+#aboutButton:hover #aboutHeader {
+    height: fit-content;
+    opacity: 1.0;
+}
+@media screen and (max-width: 683px) { /*sets the min-width for the title because im using vw */
+    #headerTitle {
+        font-size: 12px;
+    }
+    nav a {
+    
+        font-size: 15px;
+    }
+}
+/* background */
+#background-top {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top:0;
+}
+.footerLogo {
+    width: 50px;
 }
